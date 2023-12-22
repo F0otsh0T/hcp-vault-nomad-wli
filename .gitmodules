@@ -1,6 +1,0 @@
-[submodule "learn-nomad-getting-started"]
-	path = learn-nomad-getting-started
-	url = https://github.com/hashicorp-education/learn-nomad-getting-started.git
-[submodule "nomad-private"]
-	path = nomad-private
-	url = https://github.com/hashicorp/nomad-private.git
