@@ -1,0 +1,8 @@
+{
+  "default_role": "nomad-workloads",
+  "jwks_url": "http://host.docker.internal:4646/.well-known/jwks.json",
+  "jwt_supported_algs": [
+      "EdDSA",
+      "RS256"
+  ]
+}

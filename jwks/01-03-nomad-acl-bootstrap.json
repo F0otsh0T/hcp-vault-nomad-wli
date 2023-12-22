@@ -1,0 +1,13 @@
+{
+  "ExpirationTTL": "",
+  "AccessorID": "19f414eb-ed25-a6c9-5603-e2bcebf37b68",
+  "SecretID": "ce7928b5-b620-656d-bb08-4887aa3171b6",
+  "Name": "Bootstrap Token",
+  "Type": "management",
+  "Policies": null,
+  "Roles": null,
+  "Global": true,
+  "CreateTime": "2023-12-22T16:37:59.059868Z",
+  "CreateIndex": 12,
+  "ModifyIndex": 12
+}
