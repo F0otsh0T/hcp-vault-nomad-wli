@@ -29,7 +29,7 @@ clean-all: vault-jwks-url-destroy nomad-kill #target ## Clean All
 ##############################
 # ALL
 ##############################
-configure-all: nomad-all vault-jwks-url-all #target ## Configure All
+configure-all: nomad-all vault-jwks-url-all  #target ## Configure All
 
 
 ##############################
@@ -48,12 +48,16 @@ nomad-kill: # target ## Nomad Kill
 nomad-acl-boostrap: # target ## Nomad ACL Bootstrap
 	@chmod 754 *.sh && \
 	sleep 88 && \
-	./01-03-nomad-acl-bootstrap.sh
+	./01-03-nomad-acl-bootstrap.sh && \
+	cat 01-03-nomad-acl-bootstrap.json && \
+	cat 01-03-nomad-acl-bootstrap.env
 
 nomad-jwks-harvest: # target ## Nomad JWKS Harvest for Manual insertion of Public Key in Vault JWT Role
 	@chmod 754 *.sh && \
 	source 01-03-nomad-acl-bootstrap.env && \
-	./01-04-nomad-jwks-harvest.sh
+	./01-04-nomad-jwks-harvest.sh && \
+	cat pem.rsa && \
+	cat pem.x509
 
 
 ##############################
@@ -62,8 +66,8 @@ nomad-jwks-harvest: # target ## Nomad JWKS Harvest for Manual insertion of Publi
 
 vault-jwks-url-all: vault-jwks-url-configure nomad-job-test # target ## Vault JWKS URL - All
 
-
-vault-jwks-url-configure: # target ## Vault JWKS URL - Configure
+# Configure Vault and Schedule MongoDB Job in Nomad 
+vault-jwks-url-configure: # target ## Vault JWKS URL - Configure Vault and Schedule MongoDB Job in Nomad
 	@source 01-03-nomad-acl-bootstrap.env && \
 	cd tf-jwks-url && \
 	terraform init && terraform apply --auto-approve
