@@ -368,6 +368,7 @@ Run the Nomad Job. See example [**Job Spec File**](./jwks/tf-jwks-url/nomad-01-j
 ## TLDR;
 
 ```shell
+$ cd ./jwks
 $ [sudo] make -f Makefile configure-all
 ```
 
