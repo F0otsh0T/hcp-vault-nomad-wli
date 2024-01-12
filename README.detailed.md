@@ -359,8 +359,11 @@ Run the Nomad Job. See example [**Job Spec File**](./jwks/tf-jwks-url/nomad-01-j
   ```
 - Retrieve secret in MongoDB that was pulled from Vault
   ```shell
-  
+  $ docker exec -it $(docker ps | grep -i mongo | awk '{print $1}') cat /secrets/env
+  MONGO_INITDB_ROOT_USERNAME=root
+  MONGO_INITDB_ROOT_PASSWORD=secret-password
   ```
+- Reference: [./jwks/03-01-nomad-job-test.sh](./jwks/03-01-nomad-job-test.sh)
 
 ## TLDR;
 
