@@ -15,7 +15,7 @@ This example set is based on the following:
 
 This lab excercise will make use of Nomad Server and Client via local machine binaries and Vault in Docker (there will be some Docker Networking foibles to consider)
 
-## Network Connctivity
+## Network Connectivity
 HashiCorp Vault and OIDC JWKS Endpoint for Nomad Client and Server must be reachable to each other.
 
 ##### E.g. [OIDC Connect Protocol](https://openid.net/specs/openid-connect-core-1_0.html#Overview)
